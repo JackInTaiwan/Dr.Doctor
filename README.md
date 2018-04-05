@@ -33,19 +33,19 @@
 <br><br><br>
 ## **Documents**
 - **Demo Video  ( Recommended )**
-https://drive.google.com/open?id=1LMZbo_fVFO0ddS5Yw15Zlbxdc2cJCaRD
+<br> [Demo Video](https://drive.google.com/open?id=1LMZbo_fVFO0ddS5Yw15Zlbxdc2cJCaRD)
 
 
 - **Dr.Doctor Report in .pdf  ( Recommended )**
-  https://drive.google.com/open?id=1PzYNCXI-xz-ZillXXKH6hIsMlNJ2a2i4
+<br> [Dr.Doctor Report](https://drive.google.com/open?id=1PzYNCXI-xz-ZillXXKH6hIsMlNJ2a2i4)
 
 
 - **Dr.Doctor Development PPT**
-  [https://drive.google.com/open?id=1CwDGDbXiqicIllcwXvwI1YJ2RJYohzSI](https://drive.google.com/open?id=1CwDGDbXiqicIllcwXvwI1YJ2RJYohzSI)
+<br> [Dr.Doctor Development PPT](https://drive.google.com/open?id=1CwDGDbXiqicIllcwXvwI1YJ2RJYohzSI)
 
 
 - **Dr.Doctor Final Represetation PPT**
-  [https://drive.google.com/open?id=1vJNVKXvulT-2GGueBXlcDLoGn93jP42M](https://drive.google.com/open?id=1vJNVKXvulT-2GGueBXlcDLoGn93jP42M)
+<br> [Dr.Doctor Final Represetation PPT](https://drive.google.com/open?id=1vJNVKXvulT-2GGueBXlcDLoGn93jP42M)
 
 
 
