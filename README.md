@@ -5,13 +5,13 @@
       
 
 
-
+<br><br><br>
 ## **What We Want to Solve ?**
 &nbsp;&nbsp;&nbsp;&nbsp;Nowadays, human are so hustling that they don't have enough time to see a doctor directly even though they feel illness. Plus, training a professional doctor is quite time-consuming and the clinic's encounter may be confronted with the same time-consuming tasks. Therefore,  we try to build a platform to solve the kind of problems while solving the cost of time and labors.
 
 
 
-
+<br><br><br>
 ## **How We Solve ?**
 &nbsp;&nbsp;&nbsp;&nbsp; The platform typically consists of three main parts — front-end, back-end and DL model.
   
@@ -30,7 +30,7 @@
 
 
 
-
+<br><br><br>
 ## **Documents**
 - **Demo Video  ( Recommended )**
 https://drive.google.com/open?id=1LMZbo_fVFO0ddS5Yw15Zlbxdc2cJCaRD
@@ -50,7 +50,7 @@ https://drive.google.com/open?id=1LMZbo_fVFO0ddS5Yw15Zlbxdc2cJCaRD
 
 
 
-
+<br><br><br>
 ## **Collaborators**
 <br>&nbsp;&nbsp;&nbsp;&nbsp; 鄭人豪 @NTUEE https://github.com/Andy-Cheng
 <br>&nbsp;&nbsp;&nbsp;&nbsp; 朱景詳 @NTUEE
