@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<title>Cover Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{% static 'css/w3css.css' %}">
+<link rel="stylesheet" href="{% static 'css/family=Raleway.css' %}">
+<style>
+body,h1 {font-family: "Raleway", sans-serif}
+body,html {height: 100%}
+input {
+    background-color: rgba(200,200,200,0.5);
+    border: 0;
+    height: 35px;
+    width: 250px;
+    text-justify: "center";
+    text-align: "center";
+    padding-left: 20px;
+}
+form {
+    align-self: "center";
+}
+p {
+    margin-left: -27px;
+    font-size: 50px;
+    color: rgb(50,50,60);
+}
+.bgimg {
+    background-image: url('{% static "images/doctor6.jpg" %}');
+    min-height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+.myform {
+    display: flex;
+    flex-direction: column;
+    align-self: "center";
+    justify-self: "center";
+}
+.send {
+    margin-top: 20px;
+    background-color: rgba(200,200,200,0.2);
+}
+.form_back {
+    display: flex;
+    flex-direction: "column";
+    height: 440px;
+    width: 380px;
+    background-color: rgba(200,200,220,0.8);
+
+    padding-top: 100px;
+    padding-left: 64px;
+    
+}
+
+
+</style>
+
+<body> 
+    
+    <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+      <div class="w3-display-topleft w3-padding-large w3-xlarge">
+        
+      </div>
+      
+      <div class="w3-display-middle myform">
+            <p>Have Our Account？</p>
+        <div class="form_back">
+            
+        <form action='/chatroom/' method="POST" >
+        
+        <div class="myform">
+          {% csrf_token %}
+          <input type="text" name="nickname" placeholder="Your Name" />
+          <input type="text" name="gender" placeholder="Your Gender" />
+          <input type="text" name="height" placeholder="Your Height"/>
+          <input type="text" name="weight" placeholder="Your Weight" />
+          <input type="password" name="password" placeholder="Password" />
+          <div class="send">
+            <input type="submit" name="login" value="Login" />
+          </div>
+          <div class="send">
+                <input type="submit" value="Register" />
+              </div>
+        </div>
+        </form>
+        </div>
+      </div>
+      <div class="w3-display-bottomleft w3-padding-large w3-medium w3-text-black" >
+        BioMedical Experiment Group 6
+      </div>
+    </div>
+    
+    </body>
+</html>

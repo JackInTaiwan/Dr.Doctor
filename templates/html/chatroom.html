@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<title>bmeFinal_chatroom</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{% static 'css/w3css.css' %}">
+<link rel='stylesheet' href="{% static 'css/family=Roboto.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/chatroom.css' %}">
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
+.user {
+  display: flex;
+  flex-direction: row;
+}
+p {
+  margin-right: 20px;
+}
+
+</style>
+<body class="w3-light-gray">
+
+
+<!-- Page Container -->
+<div class="w3-content w3-margin-top" style="max-width:1400px;">
+
+  <!-- The Grid -->
+  <div class="w3-row-padding">
+  <div class="w3-large w3-text-white" >BioMedical Experiment Final Project-Chatroom template</div>
+    <!-- Left Column -->
+    <div class="w3-third">
+      <div class="w3-khaki w3-text-grey w3-card-4">
+        <div class="w3-display-container">
+          <img src="{% static 'images/patient.jpg' %}" style="width:100%;height:90%"  alt="Patient's Name">
+          <div class="w3-display-bottomleft w3-container w3-text-black">
+          </div>
+        </div>
+        <div class="w3-container">
+          
+          <p class="  w3-margin-right w3-medium_large w3-text-blackl">Patient's Name: <b class="fa fa-briefcase fa-fw w3-margin-right w3-medium_large w3-text-teal">Jack</b></p>
+          
+          <p class="  w3-margin-right w3-medium_large w3-text-blackl">Gender: <b class="fa fa-briefcase fa-fw w3-margin-right w3-medium_large w3-text-teal">Male</b></p>
+          <p class="  w3-margin-right w3-medium_large w3-text-blackl">Height: <b class="fa fa-briefcase fa-fw w3-margin-right w3-medium_large w3-text-teal">165</b>cm</p>
+          <p class="  w3-margin-right w3-medium_large w3-text-blackl">Weight: <b class="fa fa-briefcase fa-fw w3-margin-right w3-medium_large w3-text-teal">58</b>kg</p>
+          <hr>
+
+          <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>More Info</b></p>
+          <p>Birthday</p>
+          <div class="w3-light-grey w3-round-xlarge w3-small">
+            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:90%">put something here</div>
+          </div>
+          <p>A</p>
+          <div class="w3-light-grey w3-round-xlarge w3-small">
+            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:80%">
+              <div class="w3-center w3-text-white">80%</div>
+            </div>
+          </div>
+          <p>B</p>
+          <div class="w3-light-grey w3-round-xlarge w3-small">
+            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:75%">75%</div>
+          </div>
+          <p>C</p>
+          <div class="w3-light-grey w3-round-xlarge w3-small">
+            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:50%">50%</div>
+          </div>
+          <br>
+
+          <!-- <p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-teal"></i>Languages</b></p>
+          <p>English</p>
+          <div class="w3-light-grey w3-round-xlarge">
+            <div class="w3-round-xlarge w3-teal" style="height:24px;width:100%"></div>
+          </div>
+          <p>Spanish</p>
+          <div class="w3-light-grey w3-round-xlarge">
+            <div class="w3-round-xlarge w3-teal" style="height:24px;width:55%"></div>
+          </div>
+          <p>German</p>
+          <div class="w3-light-grey w3-round-xlarge">
+            <div class="w3-round-xlarge w3-teal" style="height:24px;width:25%"></div>
+          </div>
+          <br> -->
+        </div>
+      </div><br>
+
+    <!-- End Left Column -->
+    </div>
+
+    <!-- Right Column -->
+      <!--chatroom.html -->
+      <br>
+      <div class="w3-twothird">
+          <div class="w3-container w3-transparent ">
+      <!-- <div><marquee direction="left" SCROLLAMOUNT="20" SCROLLDELAY="60" class="w3-large w3-text-amber">~Welcome to our online clinic~</marquee></div> -->
+      <!-- <div class="w3-large w3-text-orange" style="margin:auto auto auto 20px">~Welcome to our online clinic~</div> -->
+      <div class="chatbox">
+          <div class="chatlogs">
+              <div class="chat friend">
+                  {% for message in messages %}
+                  {% if message.nickname == 'bot' %}
+                  <div class="user-photo"><img src="{% static 'images/bot.jpg' %}"/></div>
+                  <p class="chat-message">{{message.text}}</p>
+                  {% else %}  
+                  <div class="user-photo"><img src="{% static 'images/patient.jpg' %}"/></div>
+                  <p class="chat-message">{{message.text}}</p>
+                  {% endif %}  
+                  {% endfor %}
+              </div>
+         
+          </div>
+          <div class="chat-form button">
+              <!-- {% for message in messages %}
+              {{message.nickname}} says {{message.text}} </br>
+              {% endfor %} -->
+                  <!-- <textarea></textarea>
+                  <button>Send</button> -->
+                  <form action='/chatroom/' method="POST">
+                    {% csrf_token %}
+                    <div class="user">
+                      <p>Jack</p> 
+                      <input type="text" name="text" />
+                      <input type="submit" value="send" />
+                    </div>
+                  </form>
+
+
+          </div>
+          </div>
+          <!-- <div ><marquee direction="up" SCROLLAMOUNT="30" BEHAVIOR="ALTERNATE" VSPACE="30"  height = "100" class="w3-medium_large w3-text-red fa" ><pre><b>                     ↑Type Something Here</b></pre></marquee></div> -->
+      </div>
+    </div>
+
+      <!--end chatroom.html -->
+
+
+
+
+
+    <!-- <div class="w3-twothird">
+    
+      <div class="w3-container w3-card w3-white w3-margin-bottom">
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Work Experience</h2>
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>Front End Developer / w3schools.com</b></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Jan 2015 - <span class="w3-tag w3-teal w3-round">Current</span></h6>
+          <p>Lorem ipsum dolor sit amet. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.</p>
+          <hr>
+        </div>
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>Web Developer / something.com</b></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Mar 2012 - Dec 2014</h6>
+          <p>Consectetur adipisicing elit. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.</p>
+          <hr>
+        </div>
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>Graphic Designer / designsomething.com</b></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Jun 2010 - Mar 2012</h6>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p><br>
+        </div>
+      </div>
+
+      <div class="w3-container w3-card w3-white">
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Education</h2>
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>W3Schools.com</b></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Forever</h6>
+          <p>Web Development! All I need to know in one place</p>
+          <hr>
+        </div>
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>London Business School</b></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2013 - 2015</h6>
+          <p>Master Degree</p>
+          <hr>
+        </div>
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>School of Coding</b></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2010 - 2013</h6>
+          <p>Bachelor Degree</p><br>
+        </div>
+      </div> -->
+
+    <!-- End Right Column -->
+    </div>
+    
+  <!-- End Grid -->
+  </div>
+  
+  <!-- End Page Container -->
+</div>
+
+<footer class="w3-container w3-teal w3-center w3-margin-top">
+  <p>Find me on social media.</p>
+  <i class="fa fa-facebook-official w3-hover-opacity"></i>
+  <i class="fa fa-instagram w3-hover-opacity"></i>
+  <i class="fa fa-snapchat w3-hover-opacity"></i>
+  <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+  <i class="fa fa-twitter w3-hover-opacity"></i>
+  <i class="fa fa-linkedin w3-hover-opacity"></i>
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">Group 6</a></p>
+</footer>
+
+</body>
+</html>
